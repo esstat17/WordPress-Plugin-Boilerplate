@@ -20,7 +20,7 @@
  * @subpackage Plugin_Name/public
  * @author     Your Name <email@example.com>
  */
-class Plugin_Public {
+class Plugin_Name_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +65,15 @@ class Plugin_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Plugin_Loader as all of the hooks are defined
+		 * defined in Plugin_Name_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Plugin_Loader will then create the relationship
+		 * The Plugin_Name_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/front-style.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,15 +88,15 @@ class Plugin_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Plugin_Loader as all of the hooks are defined
+		 * defined in Plugin_Name_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Plugin_Loader will then create the relationship
+		 * The Plugin_Name_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/front-script.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 

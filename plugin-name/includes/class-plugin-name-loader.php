@@ -21,7 +21,7 @@
  * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
-class Plugin_Loader {
+class Plugin_Name_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.
@@ -62,7 +62,6 @@ class Plugin_Loader {
 	 * @param    string               $callback         The name of the function definition on the $component.
 	 * @param    int                  $priority         Optional. he priority at which the function should be fired. Default is 10.
 	 * @param    int                  $accepted_args    Optional. The number of arguments that should be passed to the $callback. Default is 1.
-	 * e.g. 	 $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' ) // Ref: class-plugin.php
 	 */
 	public function add_action( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
 		$this->actions = $this->add( $this->actions, $hook, $component, $callback, $priority, $accepted_args );
