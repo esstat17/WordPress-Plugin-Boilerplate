@@ -17,7 +17,7 @@
  * Plugin URI:        http://example.com/plugin-name-uri/
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
- * Author:            Author Name
+ * Author:            Your Name or Your Company
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -31,51 +31,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * 7 Quick TODOS
- * 
- * @todo 1. Replace `Plugin_Name` and `plugin-name` text with your custom Plugin Name
- * @todo 2. Replace `plugin_name` text with your `your_plugin_name`
- * @todo 3. Replace `activate_plugin_name` text. Note: Must be unique.
- * @todo 4. Replace `deactivate_plugin_name` text. Note: Must be unique.
- * @todo 5. Replace `run_plugin_name` text
- * @todo 6. Head over to /includes/class-plugin.php and follow @todo 1.
- * 
- * @todo 7. You're ready to go!
- */
-
-/**
- * The activation and deactivation hook is called outside of the singleton because WordPress doesn't
- * register the call from within the class, since we are preferring the plugins_loaded
- * hook for compatibility, we also can't reference a function inside the plugin class
- * for the activation function. If you need an activation function, put it here.
- *
- */
-
-/**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-plugin-activator.php
- * @since       1.0.0
- * @return      void
+ * This action is documented in includes/class-plugin-name-activator.php
  */
 function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-activator.php';
-	Plugin_Activator::activate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
+	Plugin_Name_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-plugin-deactivator.php
- * @since       1.0.0
- * @return      void
+ * This action is documented in includes/class-plugin-name-deactivator.php
  */
 function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-deactivator.php';
-	Plugin_Deactivator::deactivate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
+	Plugin_Name_Deactivator::deactivate();
 }
-
-/**
- * Register Hooks
- */
 
 register_activation_hook( __FILE__, 'activate_plugin_name' );
 register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
@@ -84,7 +55,7 @@ register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
 
 /**
  * Begins execution of the plugin.
@@ -97,11 +68,8 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin.php';
  */
 function run_plugin_name() {
 
-//	if ( ! class_exists( 'Plugin_Name' ) ) :
-		$plugin = new Plugin_Name(); // Main Plugin Class
-		$plugin->run();
-
-//	endif;
+	$plugin = new Plugin_Name();
+	$plugin->run();
 
 }
 run_plugin_name();
